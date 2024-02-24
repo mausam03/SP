@@ -1,10 +1,71 @@
-.App {
-  text-align: center;
+.nav-ul li{
+  display: inline-block;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-ul li a{
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.nav-ul{
+  padding:5px;
+  margin:0;
+  background-color: darkslategrey;
+}
+ .inputBox{
+  margin: 30px;
+  display: block;
+  padding: 5px;
+  width: 300px;
+  border: solid darkslategrey;
+ }
+ .register,.product{
+  margin-left: 30%;
+ }
+
+ .login {
+  margin-left: 30%;
+  margin-top: 100px;
+
+ }
+
+ .appButton{
+  margin: 25px;
+  padding: 20px;
+  height: 30px;
+  text-align: center;
+  width: 150px;
+  background-color: darkslategrey;
+  border: 1px solid;
+  cursor: pointer;
+  color: #fff;
+
+ }
+
+  .nav-right{
+    text-align: right;
+  }
+.logo{
+  width: 134px;
+    float: left;
+    border-radius: 27%;
+    margin-top: 0%;
+    margin-left: 20px 
+
+
+}
+.nav{
+  width: auto;
+  
+}
+
+.invalid-input{
+  color: red;
+  margin-top: -20px;
+  display: block;
+  margin-left: 30px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +87,14 @@
 
 .App-link {
   color: #61dafb;
+}
+.footer{
+  /* position: absolute; */
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: darkslategrey;
+  color: #fff;
 }
 
 @keyframes App-logo-spin {
