@@ -67,6 +67,37 @@
   display: block;
   margin-left: 30px;
 }
+.product-list{
+  text-align: center;
+  margin-top: 50px;
+
+}
+.product-list ul li{
+  display: inline-block;
+  border: 2px solid darkslategrey;
+  padding: 5px;
+  width: 160px;
+
+}
+
+.product-list ul{
+  margin: 0px;
+}
+
+.search-product-box{
+
+  width: 400px;
+  margin: 20px;
+  height: 40px;
+  border: 1px solid darkslategrey;
+  padding-left: 20px;
+  
+
+  
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

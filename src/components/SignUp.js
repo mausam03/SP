@@ -3,6 +3,7 @@ import React,{useEffect, useState} from "react";
 //import React, UseState from"react";
 import axios from "axios";
 import{useNavigate} from 'react-router-dom'
+// import {Button} from 'react-bootstrap';
 
 const SingUp =()=>{
     const[name,setName]=useState("");
@@ -18,26 +19,31 @@ const SingUp =()=>{
     })
 
 
+
     const collectData=async()=>{
         console.log(name,email,password);
        let result=await axios.post('http://localhost:5000/register',{
-            
             name,email,password,
-
+    },
+          {
             headers:{
                 'Content-Type':'application/json'
-            },
+
+            }
+          }
 
             
-        })
+        )
         console.log("result is",result)
 
-     const resultdata = await result.data
+     const resultdata =  result.data
      console.log(resultdata);
 
-     localStorage.setItem("user",JSON.stringify({name,email,password}));
+    //  localStorage.setItem("user",JSON.stringify({name,email,password}));
+    //  localStorage.setItem("user",JSON.stringify(resultdata));
+
      if(resultdata){
-        navigate('/')
+        navigate('/login')
      }
     }
 // useEffect(()=>{
@@ -47,7 +53,7 @@ const SingUp =()=>{
 
     return(
         <div className="register">
-        <h1>Register</h1>
+        <h1 className="bg-slate-100">Register</h1>
         <input className="inputBox" type="text" 
         value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Name "/>
         
@@ -57,7 +63,8 @@ const SingUp =()=>{
         <input className= "inputBox" type="passwowrd"
         value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter your Password "/>
         
-        <button onClick={collectData} className="appButton" type="button">Sing Up</button>
+        <button onClick={collectData} className="appButton" type="button">Sign Up</button>
+        {/* <Button variant="primary">Primary</Button>{' '} */}
 
     </div>
     )

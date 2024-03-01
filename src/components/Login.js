@@ -7,13 +7,12 @@ const Login = () => {
     const navigate = useNavigate();
     useEffect(() => {
         const auth = localStorage.getItem('user')
-
         if (auth) {
             navigate("/")
         }
     }, [])
     const handleLogin = async () => {
-        console.warn("Email,password", email, password)
+        console.log("Email,password", email, password)
         let result = await fetch('http://localhost:5000/login', {
             method: 'post',
             body: JSON.stringify({ email, password }),
@@ -24,9 +23,10 @@ const Login = () => {
         })
         console.log("result is", result)
         result = await result.json();
-        console.log(result);
-        if (result.name) {
-            localStorage.setItem("user", JSON.stringify(result));
+     console.log(result);
+        if (result.auth) {
+            localStorage.setItem("user", JSON.stringify(result.user));
+            localStorage.setItem("taken", JSON.stringify(result.auth));
             navigate("/")
 
 
@@ -37,6 +37,7 @@ const Login = () => {
 
     return (
         <div className="login">
+            <label className="unique" >Uniqu Engineering Center</label>
             <input className="inputBox" type="text" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} value={email} />
             <input className="inputBox" type="password" placeholder=" Enter Password" onChange={(e) => setPassword(e.target.value)} value={password} />
             <button onClick={handleLogin} className="appButton" type="button">Log In</button>

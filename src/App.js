@@ -5,7 +5,10 @@ import Footer from './components/Footer';
 import SingUp from './components/SignUp';
 import PrivateComponent from './components/PrivateComponent';
 import Login from './components/Login';
-import AddProduct from './components/AddProduct'
+import AddProduct from './components/AddProduct';
+import ProductList from './components/ProductList';
+import UpdateProduct from './components/UpdateProduct'
+import React from 'react';
 
 
 
@@ -17,9 +20,9 @@ function App() {
      <Routes>
 
       <Route element={<PrivateComponent/>}>
-     <Route path="/" element={<h1>Product Listing Component </h1>}/>
+     <Route path="/" element={<ProductList/>}/>
      <Route path="/add" element={<AddProduct/>}/>
-     <Route path="/update" element={<h1> Update Product Component</h1>}/>
+     <Route path="/update/:id" element={<UpdateProduct/>}/>
      <Route path="/logout" element={<h1> logout Component</h1>}/>
      <Route path="/profile" element={<h1> Profile  Component</h1>}/>
 
@@ -29,10 +32,9 @@ function App() {
      <Route path="/login" element={<Login/>}/>
 
      </Routes>
-     <div>
+     
       <Footer/>
 
-     </div>
       </BrowserRouter>
     </div>
   );
