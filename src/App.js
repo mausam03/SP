@@ -13,8 +13,16 @@ import React from 'react';
 
 
 function App() {
+
+  // const notify = () => toast("Wow so easy!");
+  
+
   return (
     <div className="App">
+
+{/* <button onClick={notify}>Notify!</button> */}
+       
+
       <BrowserRouter>
       <Nav/>
      <Routes>
@@ -36,6 +44,17 @@ function App() {
       <Footer/>
 
       </BrowserRouter>
+      {/* <ToastContainer 
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        /> */}
     </div>
   );
 }
